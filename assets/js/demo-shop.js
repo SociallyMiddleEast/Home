@@ -69,6 +69,9 @@
         '<h2 style="margin:0;font:700 24px \'Space Grotesk\',sans-serif">Order ' + S.done.no + ' confirmed</h2><p style="margin:0;color:var(--muted);line-height:1.6">' + S.done.text + '</p><p style="margin:0;font-size:14px;color:var(--muted-2)">In your store, this order would now appear in your POS and stock would update automatically.</p>' +
         '<button type="button" class="btn-3d" data-act="again" style="justify-content:center">Continue shopping</button></div>';
     }
+    if (!empty && S.step === 'cart') {
+      h += '<a href="#cart" class="mobile-bar pop-in" style="position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-radius:16px;background:#34E1C4;color:#04120F;font:700 16px \'Space Grotesk\',sans-serif;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,0.35)"><span>Cart · ' + t.count + (t.count === 1 ? ' item' : ' items') + '</span><span>View ' + money(t.total) + ' →</span></a>';
+    }
     cartEl.innerHTML = h;
   }
   function render() { renderMain(); renderCart(); }

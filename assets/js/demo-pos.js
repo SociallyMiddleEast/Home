@@ -26,7 +26,7 @@
     h += '<div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">';
     h += '<div style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px">';
     h += '<div role="group" aria-label="Menu categories" style="display:flex;flex-wrap:wrap;gap:8px">' + CATS.map(function (c) { return '<button type="button" class="chip-btn" data-cat="' + c + '" aria-pressed="' + (S.cat === c) + '" style="' + pill(S.cat === c) + '">' + c + '</button>'; }).join('') + '</div>';
-    h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px">';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px">';
     MENU.filter(function (m) { return S.cat === 'All' || m.cat === S.cat; }).forEach(function (m) {
       var q = S.lines[m.id] || 0;
       h += '<button type="button" class="pos-item" data-add="' + m.id + '" aria-label="Add ' + esc(m.name) + ', ' + money(m.price) + '" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:128px;padding:16px;border-radius:18px;border:1px solid var(--line-3);background:var(--surface);color:var(--text);text-align:left;cursor:pointer;font-family:Inter,sans-serif">' +
@@ -37,7 +37,7 @@
         '</button>';
     });
     h += '</div></div>';
-    h += '<aside aria-label="Current order" style="flex:1 1 340px;min-width:0;position:sticky;top:16px;border-radius:24px;border:1px solid var(--line-3);background:var(--surface);box-shadow:0 24px 60px var(--card-shadow);padding:22px;display:flex;flex-direction:column;gap:16px">';
+    h += '<aside id="order" aria-label="Current order" style="flex:1 1 340px;min-width:0;position:sticky;top:16px;border-radius:24px;border:1px solid var(--line-3);background:var(--surface);box-shadow:0 24px 60px var(--card-shadow);padding:22px;display:flex;flex-direction:column;gap:16px">';
     if (S.view === 'order') {
       h += '<div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px"><h2 style="margin:0;font:700 22px \'Space Grotesk\',sans-serif">Order #' + S.orderNo + '</h2><span style="font-size:14px;color:var(--muted-2)">' + tableText() + '</span></div>';
       if (empty) h += '<div style="padding:34px 12px;border-radius:16px;border:1px dashed var(--line-4);text-align:center;color:var(--muted-2);font-size:15px">Tap items on the menu to start an order.</div>';
@@ -63,6 +63,10 @@
       h += '<button type="button" class="btn-3d" data-act="new" style="justify-content:center">New order <span class="arrow" aria-hidden="true">→</span></button>';
     }
     h += '</aside></div></div>';
+    if (!empty && S.view === 'order') {
+      var n = ls.reduce(function (a, l) { return a + l.qty; }, 0);
+      h += '<a href="#order" class="mobile-bar pop-in" style="position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-radius:16px;background:#34E1C4;color:#04120F;font:700 16px \'Space Grotesk\',sans-serif;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,0.35)"><span>Order · ' + n + (n === 1 ? ' item' : ' items') + '</span><span>View ' + money(t.total) + ' →</span></a>';
+    }
     app.innerHTML = h;
   }
   function setQty(id, q) { if (q <= 0) delete S.lines[id]; else S.lines[id] = q; S.sent = false; render(); }

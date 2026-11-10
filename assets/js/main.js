@@ -171,6 +171,17 @@
     paintTabs(tabs[0].getAttribute('data-hw'));
   }
 
+  // Demo cards: the whole card (picture, title, text) opens the demo, not just the button
+  document.querySelectorAll('.card').forEach(function (card) {
+    var link = card.querySelector('a.btn-3d[href^="demo-"]');
+    if (!link) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a, button')) return;
+      window.location.href = link.getAttribute('href');
+    });
+  });
+
   // Contact form: sent by FormSubmit to the inbox in the form's action
   var form = document.getElementById('contact-form');
   if (form && window.fetch) {

@@ -102,6 +102,9 @@ to{transform:rotateX(-18deg) rotateY(360deg)}
 .bump-a{animation:bumpA .45s cubic-bezier(.3,1.6,.5,1)}
 .bump-b{animation:bumpB .45s cubic-bezier(.3,1.6,.5,1)}
 .btn-3d[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:0 6px 0 #138F7C;pointer-events:none}
+.mobile-bar{display:none}
+@media (max-width:900px){.mobile-bar{display:flex}
+}
 @keyframes popin{from{opacity:0;transform:translateY(8px) scale(.96)}
 to{opacity:1;transform:none}
 }
