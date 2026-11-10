@@ -16,6 +16,11 @@ Static website (plain HTML, CSS and JavaScript — no build step, no dependencie
 - `hardware-printers.html` — Printers
 - `hardware-drawers-scanners.html` — Drawers & scanners
 - `hardware-servers-storage.html` — Servers & storage
+- `software.html` — Software
+- `hardware.html` — Hardware
+- `demos.html` — Live demos
+- `customers.html` — Our customers
+- `contact.html` — Contact us
 
 ## Structure
 

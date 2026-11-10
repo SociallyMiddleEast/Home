@@ -137,3 +137,7 @@ to{transform:perspective(400px) rotateY(0) scale(1);opacity:1}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}
 .receipt{max-height:none}
 }
+.nav-link{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;color:var(--text-2);text-decoration:none;font-weight:500;transition:background .2s,color .2s}
+.nav-link:hover{background:var(--surface-3);color:var(--text)}
+.nav-link[aria-current=page]{color:var(--accent-text);background:rgba(52,225,196,.12);font-weight:600}
+.nav-link:focus-visible{outline:3px solid #FFB547;outline-offset:2px}
