@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Faraj;Miguel;;;
+FN:Miguel Faraj
+ORG:Socially Middle East
+TITLE:CEO
+TEL;TYPE=WORK,VOICE:+96170234138
+EMAIL;TYPE=WORK:info@sociallymiddleeast.com
+URL:https://sociallymiddleeast.github.io/Home/Signatures/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/company/116021518/
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/sociallymiddleeast
+ADR;TYPE=WORK:;;;Beirut;;;Lebanon
+END:VCARD

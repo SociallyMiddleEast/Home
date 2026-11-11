@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Email signature · Miguel Faraj</title>
+<style>
+  body{margin:0;padding:32px 16px;background:#EDF1F6;font-family:Inter,system-ui,sans-serif;color:#0B1220}
+  .wrap{max-width:640px;margin:0 auto}
+  .card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 8px 30px rgba(11,18,32,.08)}
+  h1{font-size:18px;margin:0 0 6px}
+  p.help{font-size:14px;color:#46566C;margin:0 0 18px;line-height:1.5}
+  button{margin-top:18px;background:#0B7A68;color:#fff;border:0;border-radius:10px;padding:12px 18px;font:600 14px Inter,sans-serif;cursor:pointer}
+  #ok{margin-left:10px;font-size:13px;color:#0B7A68}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Miguel Faraj — email signature</h1>
+  <p class="help">Press <b>Copy signature</b>, then in Gmail go to Settings → See all settings → Signature, and paste. In Outlook: Settings → Mail → Compose and reply → paste.</p>
+  <div class="card">
+
+<!-- ===== SIGNATURE START ===== -->
+<div id="sig">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#0B1220;max-width:520px">
+  <tr>
+    <!-- icon rail -->
+    <td valign="top" style="padding:4px 14px 4px 0;border-right:2px solid #E4EAF2">
+      <a href="https://wa.me/96170234138" style="text-decoration:none"><img src="https://sociallymiddleeast.github.io/Home/Signatures/img/ic-whatsapp.png" width="24" height="24" alt="WhatsApp" style="display:block;border:0;margin:0 0 8px"></a>
+      <a href="https://www.linkedin.com/company/116021518/" style="text-decoration:none"><img src="https://sociallymiddleeast.github.io/Home/Signatures/img/ic-linkedin.png" width="24" height="24" alt="LinkedIn" style="display:block;border:0;margin:0 0 8px"></a>
+      <a href="https://www.instagram.com/sociallymiddleeast" style="text-decoration:none"><img src="https://sociallymiddleeast.github.io/Home/Signatures/img/ic-instagram.png" width="24" height="24" alt="Instagram" style="display:block;border:0;margin:0 0 8px"></a>
+      <a href="https://sociallymiddleeast.github.io/Home/" style="text-decoration:none"><img src="https://sociallymiddleeast.github.io/Home/Signatures/img/ic-web.png" width="24" height="24" alt="Website" style="display:block;border:0"></a>
+    </td>
+    <!-- details -->
+    <td valign="top" style="padding:2px 14px 2px 16px">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+        <tr><td style="padding:0 0 10px">
+          <img src="https://sociallymiddleeast.github.io/Home/Signatures/img/logo.png" width="22" height="22" alt="" style="vertical-align:middle;border:0">
+          <span style="vertical-align:middle;font-size:11px;letter-spacing:2.5px;font-weight:bold;color:#0B1220">&nbsp;SOCIALLY MIDDLE EAST</span>
+        </td></tr>
+        <tr><td style="font-size:17px;font-weight:bold;color:#000;padding:0;white-space:nowrap">
+          <a href="https://sociallymiddleeast.github.io/Home/Signatures/" style="color:#000;text-decoration:none">Miguel Faraj</a>
+          <img src="https://sociallymiddleeast.github.io/Home/Signatures/img/ic-verified.png" width="16" height="16" alt="" style="vertical-align:middle;border:0;display:inline">
+        </td></tr>
+        <tr><td style="font-size:13px;color:#46566C;padding:2px 0 10px">CEO</td></tr>
+        <tr><td style="font-size:12px;line-height:19px;color:#2B3A4F">
+          <a href="tel:+96170234138" style="color:#2B3A4F;text-decoration:none">+961 70 234 138</a><br>
+          <a href="mailto:info@sociallymiddleeast.com" style="color:#2B3A4F;text-decoration:none">info@sociallymiddleeast.com</a><br>
+          <a href="https://sociallymiddleeast.github.io/Home/" style="color:#0B7A68;text-decoration:none;font-weight:bold">sociallymiddleeast.github.io</a>
+        </td></tr>
+        <tr><td style="padding:10px 0 0">
+          <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate"><tr><td bgcolor="#0B7A68" style="background:#0B7A68;border-radius:12px;padding:4px 12px"><a href="https://sociallymiddleeast.github.io/Home/Signatures/" style="font-size:11px;font-weight:bold;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif">View my profile &rarr;</a></td></tr></table>
+        </td></tr>
+      </table>
+    </td>
+    <!-- sliced photo -->
+    <td valign="middle" style="padding:0">
+      <a href="https://sociallymiddleeast.github.io/Home/Signatures/" style="text-decoration:none"><img src="https://sociallymiddleeast.github.io/Home/Signatures/img/sig-photo.gif" width="130" height="130" alt="Miguel Faraj — open profile" style="display:block;border:0"></a>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- ===== SIGNATURE END ===== -->
+
+  </div>
+  <button type="button" id="copy">Copy signature</button><span id="ok"></span>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async () => {
+  const el = document.getElementById('sig'), ok = document.getElementById('ok');
+  try {
+    const html = new Blob([el.innerHTML], {type: 'text/html'});
+    const text = new Blob([el.innerText], {type: 'text/plain'});
+    await navigator.clipboard.write([new ClipboardItem({'text/html': html, 'text/plain': text})]);
+    ok.textContent = 'Copied — now paste it into your mail settings.';
+  } catch (e) {
+    const r = document.createRange(); r.selectNodeContents(el);
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    ok.textContent = 'Selected — press Ctrl/Cmd + C to copy.';
+  }
+});
+</script>
+</body>
+</html>
