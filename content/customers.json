@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Sakina Fatqa",
+    "label": "Customer",
+    "initials": "SF",
+    "color": "linear-gradient(145deg, #34E1C4, #1BA892)",
+    "logo": "",
+    "url": "",
+    "visible": true
+  },
+  {
+    "name": "Geco Restaurant",
+    "label": "Customer",
+    "initials": "GR",
+    "color": "linear-gradient(145deg, #FFB547, #C98A2B)",
+    "logo": "",
+    "url": "",
+    "visible": true
+  },
+  {
+    "name": "Lyv Resort",
+    "label": "Customer",
+    "initials": "LR",
+    "color": "linear-gradient(145deg, #34E1C4 0%, #34E1C4 50%, #FFB547 50%, #FFB547 100%)",
+    "logo": "",
+    "url": "",
+    "visible": true
+  }
+]

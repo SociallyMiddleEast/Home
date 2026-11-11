@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Socially Admin</title>
+<script>(function(){var t;try{t=localStorage.getItem('sme-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)})();</script>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  body{margin:0;font-family:Inter,'Inter Display',system-ui,sans-serif;color:var(--text);background:var(--bg);background-image:radial-gradient(var(--dots) 1px,transparent 1px);background-size:28px 28px;min-height:100vh}
+  h1,h2,h3{font-family:'Space Grotesk','Inter Display',Inter,sans-serif;letter-spacing:-.01em}
+  .hide{display:none !important}
+  .center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .panel{width:100%;max-width:460px;padding:36px;border-radius:24px;border:1px solid var(--line-3);background:var(--surface);box-shadow:0 30px 70px var(--card-shadow);display:flex;flex-direction:column;gap:18px}
+  .panel.wide{max-width:640px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo i{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#34E1C4 50%,#FFB547 50%);display:block}
+  .logo b{font:700 20px 'Space Grotesk',sans-serif}.logo small{display:block;font-size:11px;letter-spacing:.22em;color:var(--muted-2)}
+  label.f{display:flex;flex-direction:column;gap:7px;font-size:14px;color:var(--text-2);font-weight:500}
+  label.f small{color:var(--muted-2);font-weight:400;line-height:1.45}
+  .in{min-height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--line-3);background:var(--bg);color:var(--text);font:16px Inter,sans-serif;width:100%}
+  textarea.in{padding:12px 14px;min-height:120px;resize:vertical;line-height:1.55}
+  .in:focus{outline:2px solid #34E1C4;outline-offset:1px;border-color:transparent}
+  .err{padding:12px 14px;border-radius:12px;background:rgba(229,72,77,.12);border:1px solid rgba(229,72,77,.5);color:#ff8a8e;font-size:14px;line-height:1.5}
+  [data-theme=light] .err{color:#B42318}
+  .ok{padding:12px 14px;border-radius:12px;background:rgba(52,225,196,.12);border:1px solid rgba(52,225,196,.45);color:var(--accent-text);font-size:14px;line-height:1.5}
+  .muted{color:var(--muted)}.small{font-size:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;border:1px solid var(--line-3);background:var(--surface);color:var(--text);font:600 15px Inter,sans-serif;cursor:pointer;text-decoration:none}
+  .btn:hover{border-color:rgba(52,225,196,.6)}
+  .btn.danger{color:#ff8a8e;border-color:rgba(229,72,77,.45)}[data-theme=light] .btn.danger{color:#B42318}
+  .btn[disabled],.btn-3d[disabled]{opacity:.5;pointer-events:none}
+  .layout{display:flex;min-height:100vh}
+  .side{flex:0 0 250px;padding:24px 16px;border-right:1px solid var(--line-3);background:var(--glass-2);display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+  .nav{display:flex;align-items:center;gap:12px;min-height:46px;padding:0 14px;border-radius:12px;color:var(--text-2);text-decoration:none;font-weight:500;cursor:pointer;border:0;background:none;font-size:15px;text-align:left;width:100%}
+  .nav:hover{background:var(--surface-3);color:var(--text)}
+  .nav[aria-current=page]{background:rgba(52,225,196,.14);color:var(--accent-text);font-weight:600}
+  .nav svg{flex-shrink:0}
+  .main{flex:1;min-width:0;padding:32px clamp(18px,4vw,48px) 80px;display:flex;flex-direction:column;gap:24px}
+  .top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+  .top h1{margin:0;font-size:34px}
+  .box{padding:24px;border-radius:20px;border:1px solid var(--line-2);background:var(--surface);display:flex;flex-direction:column;gap:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .item{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface)}
+  .item .t{flex:1;min-width:180px;display:flex;flex-direction:column;gap:4px}
+  .pill{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+  .pill.on{background:rgba(52,225,196,.14);color:var(--accent-text)}.pill.off{background:var(--surface-3);color:var(--muted-2)}
+  .thumb{width:72px;height:56px;border-radius:10px;background:var(--bg-2) center/cover no-repeat;flex-shrink:0;border:1px solid var(--line-2)}
+  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .tools{display:flex;flex-wrap:wrap;gap:6px}
+  .tools button{min-height:36px;padding:0 12px;border-radius:9px;border:1px solid var(--line-3);background:var(--bg-2);color:var(--text);font:600 14px Inter,sans-serif;cursor:pointer}
+  .preview{padding:18px;border-radius:14px;border:1px dashed var(--line-4);background:var(--bg);font-size:16px;line-height:1.7;color:var(--text-2);min-height:120px}
+  .swatches{display:flex;flex-wrap:wrap;gap:10px}
+  .sw{width:44px;height:44px;border-radius:12px;border:3px solid transparent;cursor:pointer}
+  .sw[aria-pressed=true]{border-color:var(--text)}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:100;max-width:min(560px,92vw);padding:14px 20px;border-radius:14px;background:#0B1220;color:#E8EEF5;border:1px solid rgba(52,225,196,.5);box-shadow:0 20px 50px rgba(0,0,0,.4);font-size:15px;line-height:1.45}
+  .toast.bad{border-color:rgba(229,72,77,.6)}
+  .media{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface)}
+  .media .img{height:140px;border-radius:10px;background:var(--bg-2) center/contain no-repeat}
+  .spin{width:18px;height:18px;border-radius:50%;border:3px solid rgba(52,225,196,.3);border-top-color:#34E1C4;animation:spin .8s linear infinite;display:inline-block}
+  code{background:var(--bg-2);padding:2px 6px;border-radius:6px;font-size:13px}
+  ol.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--text-2);line-height:1.5;font-size:14px}
+  @media (max-width:860px){.layout{flex-direction:column}.side{position:static;height:auto;flex-direction:row;overflow-x:auto;flex-basis:auto;border-right:0;border-bottom:1px solid var(--line-3);padding:10px}.side .logo,.side .grow{display:none}.nav{width:auto;white-space:nowrap}}
+</style>
+</head>
+<body>
+  <!-- loading -->
+  <div id="vLoading" class="center"><span class="spin" aria-label="Loading"></span></div>
+
+  <!-- login -->
+  <div id="vLogin" class="center hide">
+    <form id="loginForm" class="panel" autocomplete="on">
+      <div class="logo"><i></i><div><b>Socially</b><small>ADMIN</small></div></div>
+      <h1 style="margin:6px 0 0;font-size:28px">Sign in</h1>
+      <div id="loginErr" class="err hide" role="alert"></div>
+      <label class="f">Username<input class="in" id="lUser" name="username" autocomplete="username" required></label>
+      <label class="f">Password<input class="in" id="lPass" name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn-3d" id="loginBtn" type="submit" style="justify-content:center">Sign in</button>
+      <a href="../index.html" class="small muted" style="text-decoration:none">← Back to the website</a>
+    </form>
+  </div>
+
+  <!-- first-time setup -->
+  <div id="vSetup" class="center hide">
+    <form id="setupForm" class="panel wide">
+      <div class="logo"><i></i><div><b>Socially</b><small>ADMIN · FIRST-TIME SETUP</small></div></div>
+      <h1 style="margin:6px 0 0;font-size:28px">Set up admin access</h1>
+      <p class="muted small" style="margin:0;line-height:1.6">This is done once. The admin saves your changes into your GitHub repository, so it needs a GitHub access key. The key is locked with the username and password you choose here and can't be used without them.</p>
+      <div class="box" style="gap:10px">
+        <strong>1. Create a GitHub access key</strong>
+        <ol class="steps">
+          <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained tokens → Generate new token</a> (signed in as the account that owns the website repository).</li>
+          <li>Name: <code>Socially Admin</code>. Expiration: up to 1 year. Resource owner: the owner of the website repo.</li>
+          <li>Repository access: <b>Only select repositories</b> → your website repository.</li>
+          <li>Permissions → Repository permissions → <b>Contents: Read and write</b>. Nothing else.</li>
+          <li>Generate, copy the key and paste it below.</li>
+        </ol>
+      </div>
+      <strong>2. Fill in</strong>
+      <div id="setupErr" class="err hide" role="alert"></div>
+      <div class="two">
+        <label class="f">GitHub account / organisation<input class="in" id="sOwner" required></label>
+        <label class="f">Repository<input class="in" id="sRepo" required></label>
+      </div>
+      <label class="f">GitHub access key<input class="in" id="sToken" type="password" autocomplete="off" required placeholder="github_pat_…"></label>
+      <label class="f">Admin username<input class="in" id="sUser" autocomplete="username" required></label>
+      <div class="two">
+        <label class="f">Admin password<input class="in" id="sPass" type="password" autocomplete="new-password" required minlength="10"></label>
+        <label class="f">Repeat password<input class="in" id="sPass2" type="password" autocomplete="new-password" required></label>
+      </div>
+      <button class="btn-3d" id="setupBtn" type="submit" style="justify-content:center">Create admin access</button>
+    </form>
+  </div>
+
+  <!-- app -->
+  <div id="vApp" class="layout hide">
+    <nav class="side" aria-label="Admin">
+      <div class="logo" style="padding:4px 10px 18px"><i></i><div><b>Socially</b><small>ADMIN</small></div></div>
+      <button class="nav" data-view="dash">Dashboard</button>
+      <button class="nav" data-view="news">News</button>
+      <button class="nav" data-view="customers">Customers</button>
+      <button class="nav" data-view="site">Site text &amp; contact</button>
+      <button class="nav" data-view="media">Images</button>
+      <button class="nav" data-view="settings">Settings</button>
+      <div class="grow" style="flex:1"></div>
+      <a class="nav" href="../index.html" target="_blank" rel="noopener">View website ↗</a>
+      <button class="nav" id="themeBtn" type="button">Light / dark</button>
+      <button class="nav" id="logoutBtn" type="button">Log out</button>
+    </nav>
+    <main class="main" id="main"></main>
+  </div>
+
+  <div id="toast" class="toast hide" role="status"></div>
+<script src="../assets/js/cms.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

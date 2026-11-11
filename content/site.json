@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "badge": "Software · Hardware · Support — one partner",
+    "titleStart": "The systems that ",
+    "titleHighlight": "run your business",
+    "titleEnd": ", built and installed by us.",
+    "text": "POS, ERP, websites and online stores — plus the terminals, PCs, printers and servers they run on. Socially Middle East delivers the full stack, from the first line of code to the last cable."
+  },
+  "contact": {
+    "phone": "+961 70 234 138",
+    "email": "info@sociallymiddleeast.com",
+    "locations": "Lebanon · Qatar"
+  },
+  "customers": {
+    "title": "Businesses that run on Socially",
+    "intro": "Some of the businesses we work with."
+  },
+  "news": {
+    "title": "Latest news",
+    "intro": "Product updates, new customers and what we’re working on."
+  }
+}

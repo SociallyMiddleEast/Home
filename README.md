@@ -21,6 +21,8 @@ Static website (plain HTML, CSS and JavaScript — no build step, no dependencie
 - `demos.html` — Live demos
 - `customers.html` — Our customers
 - `contact.html` — Contact us
+- `news.html` — News
+- `SociallyAdmin/index.html` — Admin (login required)
 
 ## Structure
 
@@ -31,6 +33,20 @@ hardware-*.html            Hardware category pages
 assets/css/styles.css      All animations, 3D effects and button styles
 assets/js/main.js          Light/dark mode, draggable hero cube, hardware tabs, contact form
 ```
+
+## Admin — /SociallyAdmin
+
+Open `SociallyAdmin/` on the live site (e.g. `https://sociallymiddleeast.github.io/Home/SociallyAdmin/`).
+
+- **First visit:** a one-time setup asks for a GitHub fine-grained access key (repository: this repo only;
+  permission: *Contents — Read and write*), plus the admin username and password you choose.
+- The key is saved in `content/admin-auth.json`, **encrypted** with your username + password
+  (PBKDF2-SHA256, 600,000 rounds → AES-256-GCM). The password itself is never stored.
+- After that, sign in with the username and password to manage **News**, **Customers**, **Site text & contact**
+  and **Images**. Each save is a commit to this repo; GitHub Pages publishes it in about a minute.
+- Content lives in `content/site.json`, `content/news.json`, `content/customers.json`; uploads go to `assets/uploads/`.
+- Forgot the password? Delete `content/admin-auth.json` in GitHub and run the setup again with a new key.
+- When the GitHub key expires, use **Settings → Replace GitHub key** in the admin.
 
 ## Light and dark mode
 
