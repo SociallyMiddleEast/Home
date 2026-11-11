@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "kdf": "PBKDF2-SHA256",
+  "iterations": 600000,
+  "salt": "mBiXM/Tfe+DmaCfp5IebYA==",
+  "iv": "UgC4OdPBzUoqrHqn",
+  "data": "npO7mY7UQ3oQpp/NOKzoqwy6d24ZvfwP8HEANdo975tXODfq3/KbxxxcZ7w5w7eAjbwJ7fBKqkn0omyAKjUdW/CQ4UFKJ6gQP4gUn+XfzyjqwuFVd70fOLxoUGwmlmYGS06ZDPNndolaMChLFWQUNd+I4OwUlZPc5skioxVHbALM+LoSmrg4NHEZJUkHMG8/KgMB2pp6YvNV/YfnE21ZRfAxyttpFiBl8dZ2Zqqb0lDsJ8SQ",
+  "note": "Locked admin key for /SociallyAdmin. It cannot be used without the admin username and password."
+}
