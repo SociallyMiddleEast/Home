@@ -279,6 +279,7 @@
   // ----- site text -----
   var FIELDS = [
     ['Home page — top section', [['hero.badge', 'Small badge above the headline'], ['hero.titleStart', 'Headline — first part'], ['hero.titleHighlight', 'Headline — highlighted words (teal)'], ['hero.titleEnd', 'Headline — last part'], ['hero.text', 'Paragraph under the headline', true]]],
+    ['About Us page', [['about.intro', 'Short intro (top of the About page and the home page)', true], ['about.story', 'Our story — use **bold**, an empty line between paragraphs', true], ['about.mission', 'Our mission', true]]],
     ['Contact details (used across the whole site)', [['contact.phone', 'Phone number'], ['contact.email', 'Email address shown on the site'], ['contact.locations', 'Locations']]],
     ['Customers section', [['customers.intro', 'Text next to the Customers heading']]],
     ['News section', [['news.title', 'Heading of the news section on the home page']]]];

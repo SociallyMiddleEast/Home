@@ -21,6 +21,7 @@ Static website (plain HTML, CSS and JavaScript — no build step, no dependencie
 - `demos.html` — Live demos
 - `customers.html` — Our customers
 - `contact.html` — Contact us
+- `about.html` — About us
 - `news.html` — News
 - `SociallyAdmin/index.html` — Admin (login required)
 

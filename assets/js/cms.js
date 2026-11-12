@@ -34,6 +34,10 @@
       var v = pick(site, el.getAttribute('data-cms'));
       if (typeof v === 'string' && v.trim()) el.textContent = v;
     });
+    document.querySelectorAll('[data-cms-rich]').forEach(function (el) {
+      var v = pick(site, el.getAttribute('data-cms-rich'));
+      if (typeof v === 'string' && v.trim()) el.innerHTML = rich(v);
+    });
     var c = site.contact || {};
     if (c.phone) document.querySelectorAll('[data-cms-tel]').forEach(function (a) { a.textContent = c.phone; a.setAttribute('href', 'tel:' + c.phone.replace(/[^\d+]/g, '')); });
     if (c.email) document.querySelectorAll('[data-cms-email]').forEach(function (a) { a.textContent = c.email; a.setAttribute('href', 'mailto:' + c.email); });

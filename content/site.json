@@ -18,5 +18,10 @@
   "news": {
     "title": "Latest news",
     "intro": "Product updates, new customers and what we’re working on."
+  },
+  "about": {
+    "intro": "Software, hardware and support for businesses in Lebanon and Qatar — since 2020.",
+    "story": "Socially Middle East was founded in **2020** with a simple idea: businesses in our region deserve technology that just works — and a team that picks up the phone when it doesn’t.\n\nWe started by building software. Along the way our customers kept asking for the same thing: one partner for the whole setup. So we grew into exactly that — **POS systems, ERP, websites and online stores**, plus the **terminals, printers, tablets and servers** they run on.\n\nToday we serve restaurants, hotels, shops and companies in **Lebanon and Qatar**. We design, configure, install and support every system ourselves, so there is never any doubt about who to call.",
+    "mission": "Give every business in the Middle East systems that are simple to use, built around how they really work, and backed by people who care."
   }
 }

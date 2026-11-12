@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=202611111920">
-<script src="assets/js/main.js?v=202611111920" defer></script>
-<script src="assets/js/cms.js?v=202611111920" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=202611120938">
+<script src="assets/js/main.js?v=202611120938" defer></script>
+<script src="assets/js/cms.js?v=202611120938" defer></script>
 </head>
 <body>
 <div style="font-family: Inter, system-ui, sans-serif; color: var(--text); background: var(--bg); background-image: radial-gradient(var(--dots) 1px, transparent 1px); background-size: 28px 28px; overflow: hidden">
@@ -36,6 +36,7 @@
     </a>
     <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 15px">
       <a class="nav-link" href="index.html" aria-current="page">Home</a>
+      <a class="nav-link" href="about.html">About</a>
       <a class="nav-link" href="software.html">Software</a>
       <a class="nav-link" href="hardware.html">Hardware</a>
       <a class="nav-link" href="demos.html">Demos</a>
@@ -125,6 +126,18 @@
   </div>
 
   <!-- ================= SOFTWARE ================= -->
+  <section id="about" style="max-width: 1240px; margin: 0 auto; padding: 100px 24px 0">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; padding: clamp(28px, 5vw, 56px); border-radius: 32px; border: 1px solid var(--line-2); background: linear-gradient(160deg, var(--surface-2), var(--bg-2))">
+      <div aria-hidden="true" style="flex: 0 0 auto; width: 170px; height: 170px; border-radius: 44px; background: linear-gradient(145deg, #34E1C4, #1BA892); color: #04120F; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: perspective(700px) rotateY(-16deg) rotateX(10deg); box-shadow: 20px 30px 60px rgba(0,0,0,0.3)"><span style="font: 600 13px Inter, sans-serif; letter-spacing: 0.22em">SINCE</span><span style="font: 700 58px/1 'Space Grotesk', sans-serif; letter-spacing: -0.04em">2020</span></div>
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber-text)">About us</span>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(28px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -0.02em">One team for your software, hardware and support.</h2>
+        <p data-cms="about.intro" style="margin: 0; color: var(--muted); line-height: 1.6; font-size: 18px">Software, hardware and support for businesses in Lebanon and Qatar — since 2020.</p>
+      </div>
+      <a class="btn-ring" href="about.html">Our story</a>
+    </div>
+  </section>
+
   <section id="software" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; gap: 48px">
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
       <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
@@ -449,7 +462,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 48px">
         <div style="display: flex; flex-direction: column; gap: 8px"><span style="color: var(--text); font-weight: 600">Software</span><a href="pos.html" style="color: var(--muted-2); text-decoration: none">POS System</a><a href="erp.html" style="color: var(--muted-2); text-decoration: none">ERP</a><a href="web-development.html" style="color: var(--muted-2); text-decoration: none">Web Development</a><a href="ecommerce.html" style="color: var(--muted-2); text-decoration: none">E-commerce</a></div>
         <div style="display: flex; flex-direction: column; gap: 8px"><span style="color: var(--text); font-weight: 600">Hardware</span><a href="hardware-pos-terminals.html" style="color: var(--muted-2); text-decoration: none">POS terminals</a><a href="hardware-pcs-tablets.html" style="color: var(--muted-2); text-decoration: none">PCs &amp; tablets</a><a href="hardware-printers.html" style="color: var(--muted-2); text-decoration: none">Printers</a><a href="hardware-drawers-scanners.html" style="color: var(--muted-2); text-decoration: none">Drawers &amp; scanners</a><a href="hardware-servers-storage.html" style="color: var(--muted-2); text-decoration: none">Servers &amp; storage</a></div>
-        <div style="display: flex; flex-direction: column; gap: 8px"><span style="color: var(--text); font-weight: 600">Company</span><a href="demos.html" style="color: var(--muted-2); text-decoration: none">Demos</a><a href="customers.html" style="color: var(--muted-2); text-decoration: none">Customers</a><a href="news.html" style="color: var(--muted-2); text-decoration: none">News</a><a href="contact.html" style="color: var(--muted-2); text-decoration: none">Contact</a></div>
+        <div style="display: flex; flex-direction: column; gap: 8px"><span style="color: var(--text); font-weight: 600">Company</span><a href="about.html" style="color: var(--muted-2); text-decoration: none">About us</a><a href="demos.html" style="color: var(--muted-2); text-decoration: none">Demos</a><a href="customers.html" style="color: var(--muted-2); text-decoration: none">Customers</a><a href="news.html" style="color: var(--muted-2); text-decoration: none">News</a><a href="contact.html" style="color: var(--muted-2); text-decoration: none">Contact</a></div>
       </div>
     </div>
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 32px; font-size: 13px; color: var(--muted-2)">© 2026 Socially Middle East</div>
